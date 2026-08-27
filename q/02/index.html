@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QR-02</title>
+<style>
+ :root{color-scheme:light dark}
+ body{margin:0;min-height:100vh;display:grid;place-items:center;
+      font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:#fffdf5;color:#2c3b2c}
+ @media(prefers-color-scheme:dark){body{background:#161a16;color:#e6ece6}}
+ .card{max-width:26rem;padding:2rem 1.5rem;text-align:center}
+ .code{font-weight:700;letter-spacing:.06em;color:#3d6b3d}
+ @media(prefers-color-scheme:dark){.code{color:#9ccf9c}}
+ h1{font-size:1.15rem;margin:.6rem 0}
+ p{opacity:.8;font-size:.95rem}
+ a{color:#3d6b3d}
+</style></head><body><div class="card">
+ <div class="code">QR-02</div>
+ <h1 id="t">Opening the video…</h1>
+ <p id="m">If nothing happens, <a id="l" href="#">tap here</a>.</p>
+</div><script>
+var CODE="QR-02";
+fetch('../../links.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){
+  var u=(d[CODE]||'').trim();
+  if(u){ document.getElementById('l').href=u; location.replace(u); }
+  else{ document.getElementById('t').textContent='Video not added yet';
+        document.getElementById('m').textContent=
+          'This activity does not have a video linked yet. Please check back later.'; }
+}).catch(function(){
+  document.getElementById('t').textContent='Could not load the link';
+  document.getElementById('m').textContent='Please check your internet connection and try again.';
+});
+</script></body></html>

@@ -1,0 +1,29 @@
+HOW TO CHANGE WHERE A QR CODE GOES
+==================================
+
+The printed QR codes never change. They all point at this website, and this
+website decides which video opens. So you can change any destination at any
+time without reprinting the annexure.
+
+TO CHANGE A LINK
+----------------
+1. Open the file  links.json
+2. Find the code you want, for example:   "QR-06": ""
+3. Put the YouTube link between the quote marks:
+       "QR-06": "https://youtu.be/8ztMPOfsFBQ"
+4. Save the file (and, if using GitHub, commit the change).
+
+That's it. Anyone scanning QR-06 now goes to that video.
+
+RULES
+-----
+- Keep the quote marks and the comma at the end of each line.
+- Leave a link empty ("") if the video is not decided yet. People who scan it
+  see a polite "video not added yet" message instead of an error.
+- Use the short link form:  https://youtu.be/VIDEOID
+- Do not rename the codes (QR-01 ... QR-28) - they match the printed codes.
+
+TO CHECK EVERYTHING
+-------------------
+Open index.html in a browser. It lists all 28 codes and shows exactly which
+video each one currently opens, so you can spot anything still missing.
